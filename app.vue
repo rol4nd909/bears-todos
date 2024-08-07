@@ -3,7 +3,9 @@ const colorMode = useColorMode();
 </script>
 
 <template>
-  <div class="grid min-h-screen place-content-center ~gap-4/6 ~p-4/8">
+  <div
+    class="grid min-h-screen content-center justify-items-center ~gap-4/6 ~p-4/8"
+  >
     <h1 class="text-balance ~text-2xl/5xl">Todo List</h1>
 
     <TodoList />
@@ -12,6 +14,6 @@ const colorMode = useColorMode();
 
 <style lang="postcss">
 body {
-  @apply bg-gray-100 text-gray-700 dark:bg-slate-950 dark:text-gray-500;
+  @apply bg-gray-100 text-gray-700 dark:bg-slate-950 dark:text-gray-300;
 }
 </style>

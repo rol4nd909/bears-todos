@@ -14,6 +14,6 @@ const colorMode = useColorMode();
 
 <style lang="postcss">
 body {
-  @apply bg-gray-100 text-gray-700 dark:bg-slate-950 dark:text-gray-300;
+  @apply bg-slate-50 text-gray-700 dark:bg-slate-950 dark:text-gray-300;
 }
 </style>

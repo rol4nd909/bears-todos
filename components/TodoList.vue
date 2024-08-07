@@ -5,7 +5,7 @@
     <AddTodo />
 
     <div
-      class="grid gap-4 border-b border-slate-300 ~pb-6/10 dark:border-slate-800"
+      class="grid gap-2 border-b border-slate-300 ~pb-6/10 dark:border-slate-800"
       v-if="todoStore.notCompletedTodos.length > 0"
     >
       <TodoItem
@@ -17,7 +17,7 @@
       />
     </div>
 
-    <div>
+    <div class="grid gap-2">
       <h2
         class="text-lg font-semibold"
         v-if="todoStore.completedTodos.length < 1"
@@ -64,6 +64,7 @@ const toggleTodoStatus = async (id: number, completed: boolean) => {
 
 onMounted(() => {
   const hasLocalTodos = todoStore.loadFromLocalStorage();
+
   if (!hasLocalTodos) {
     fetchTodos();
   }

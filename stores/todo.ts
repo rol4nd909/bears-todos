@@ -10,15 +10,15 @@ export const useTodoStore = defineStore("todo", {
 
   getters: {
     allTodos(state) {
-      return [...state.todos, ...state.localTodos];
+      return [...state.localTodos, ...state.todos];
     },
     completedTodos(state) {
-      return [...state.todos, ...state.localTodos].filter(
+      return [...state.localTodos, ...state.todos].filter(
         (todo) => todo.completed,
       );
     },
     notCompletedTodos(state) {
-      return [...state.todos, ...state.localTodos].filter(
+      return [...state.localTodos, ...state.todos].filter(
         (todo) => !todo.completed,
       );
     },
@@ -27,29 +27,36 @@ export const useTodoStore = defineStore("todo", {
   actions: {
     loadFromLocalStorage(): boolean {
       const storedTodos = localStorage.getItem("todos");
-      const storedLocalTodos = localStorage.getItem("localTodos");
 
       if (storedTodos) this.todos = JSON.parse(storedTodos);
-      if (storedLocalTodos) this.localTodos = JSON.parse(storedLocalTodos);
 
-      return !!(storedTodos || storedLocalTodos);
+      return !!storedTodos;
     },
 
     saveToLocalStorage() {
-      localStorage.setItem("todos", JSON.stringify(this.todos));
-      localStorage.setItem("localTodos", JSON.stringify(this.localTodos));
+      localStorage.setItem("todos", JSON.stringify(this.allTodos));
     },
 
     async fetchTodos(limit: number = 5) {
-      try {
-        const response = await axios.get<TodoApiResponse>(
-          `${API_URL}?limit=${limit}`,
-        );
+      // Load todos from local storage
+      const storedTodos = localStorage.getItem("todos");
 
-        this.todos = response.data.todos;
-        this.saveToLocalStorage();
-      } catch (error) {
-        console.error("Error fetching todos:", error);
+      if (storedTodos) {
+        this.localTodos = JSON.parse(storedTodos);
+      }
+
+      // Fetch todos from API only if there are no stored todos
+      if (this.localTodos.length === 0) {
+        try {
+          const response = await axios.get<TodoApiResponse>(
+            `${API_URL}?limit=${limit}`,
+          );
+
+          this.todos = response.data.todos;
+          this.saveToLocalStorage();
+        } catch (error) {
+          console.error("Error fetching todos:", error);
+        }
       }
     },
 
@@ -64,14 +71,10 @@ export const useTodoStore = defineStore("todo", {
         const newTodo = {
           ...response.data,
           isLocal: true,
+          id: Date.now(),
         };
 
-        // If localTodos is empty, this is the first todo, assign a unique ID
-        if (this.localTodos.length === 0) {
-          newTodo.id = Date.now(); // Assign a unique ID
-        }
-
-        this.localTodos.push(newTodo);
+        this.localTodos.unshift(newTodo);
         this.saveToLocalStorage();
       } catch (error) {
         console.error("Error adding todo:", error);
@@ -135,13 +138,12 @@ export const useTodoStore = defineStore("todo", {
   },
 });
 
-// Interfaces
 export interface Todo {
   id: number;
   todo: string;
   completed: boolean;
   userId: number;
-  isLocal?: boolean;
+  isLocal?: boolean; // Flag to indicate if the todo was added locally
   isDeleted?: boolean;
   deletedOn?: string;
 }

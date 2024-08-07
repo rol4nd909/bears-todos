@@ -1,23 +1,23 @@
 <template>
-  <div class="grid gap-4">
-    <h2 class="text-lg font-semibold">Add a New Todo</h2>
-    <form @submit.prevent="addTodo" class="flex gap-4">
-      <div class="flex-1">
-        <label for="todo" class="sr-only">Add todo</label>
-        <input
-          id="todo"
-          v-model="newTodo.todo"
-          type="text"
-          class="w-full border-b border-gray-300 bg-transparent py-4 focus:border-blue-500 focus:outline-none dark:border-slate-700/50 dark:focus:border-blue-500"
-          placeholder="Add todo"
-          required
-        />
-      </div>
-      <button type="submit" class="rounded bg-blue-500 px-4 py-2 text-white">
-        Add Todo
-      </button>
-    </form>
-  </div>
+  <form @submit.prevent="addTodo" class="flex gap-4">
+    <div class="flex-1">
+      <label for="todo" class="sr-only">Add todo</label>
+      <input
+        id="todo"
+        v-model="newTodo.todo"
+        type="text"
+        class="w-full border-b border-gray-300 bg-transparent py-4 focus:border-blue-500 focus:outline-none dark:border-slate-700/50 dark:focus:border-blue-400"
+        placeholder="Add todo"
+        required
+      />
+    </div>
+    <button
+      type="submit"
+      class="rounded bg-blue-500 px-4 py-2 text-slate-900 dark:bg-blue-400"
+    >
+      Add Todo
+    </button>
+  </form>
 </template>
 
 <script setup lang="ts">

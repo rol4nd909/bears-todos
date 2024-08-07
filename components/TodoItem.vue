@@ -1,16 +1,29 @@
 <template>
-  <div
+  <Motion
+    preset="slideLeft"
     v-if="todo"
-    class="transform rounded border bg-white p-4 shadow-md transition hover:scale-105 dark:border-slate-700/50 dark:bg-slate-800"
+    class="flex gap-4 rounded border bg-white p-4 shadow-md dark:border-slate-700/50 dark:bg-slate-800"
   >
-    <input
-      type="checkbox"
-      :checked="todo.completed"
-      @change="toggleCompleted"
-    />
-    {{ todo.todo }}
-    <button class="text-red-500" @click="removeTodo">Remove</button>
-  </div>
+    <label class="flex flex-1 cursor-pointer gap-4">
+      <input
+        type="checkbox"
+        :checked="todo.completed"
+        @change="toggleCompleted"
+      />
+
+      <span
+        class="text-gray-700/75 line-through dark:text-gray-300/80"
+        v-if="todo.completed"
+        >{{ todo.todo }}</span
+      >
+      <span v-else>{{ todo.todo }}</span>
+    </label>
+
+    <button class="transition hover:text-red-500" @click.stop="removeTodo">
+      <span class="sr-only">Remove</span>
+      <Icon name="my-icons:bin" class="text-2xl" />
+    </button>
+  </Motion>
 </template>
 
 <script setup lang="ts">

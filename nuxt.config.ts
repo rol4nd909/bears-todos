@@ -12,13 +12,4 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "",
   },
-  icon: {
-    provider: "server",
-    customCollections: [
-      {
-        prefix: "my-icons",
-        dir: "./assets/icons",
-      },
-    ],
-  },
 });

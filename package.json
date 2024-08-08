@@ -19,6 +19,7 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "@iconify-json/solar": "^1.1.10",
     "@nuxtjs/color-mode": "^3.4.2",
     "fluid-tailwind": "^1.0.3",
     "prettier": "^3.3.3",

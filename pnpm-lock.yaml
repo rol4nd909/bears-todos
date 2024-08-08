@@ -28,6 +28,9 @@ dependencies:
     version: 3.4.36
 
 devDependencies:
+  '@iconify-json/solar':
+    specifier: ^1.1.10
+    version: 1.1.10
   '@nuxtjs/color-mode':
     specifier: ^3.4.2
     version: 3.4.2
@@ -1035,6 +1038,12 @@ packages:
     engines: {node: '>=14'}
     dev: false
 
+  /@iconify-json/solar@1.1.10:
+    resolution: {integrity: sha512-g+p9GbYrzfLkbcbs+TwBr42YvUeRgNUbVv0ZRi464MvlTWN9B/ekgFZszbIBqgjQT9GjfToQQLP6GOmDPDhLNw==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify/collections@1.0.446:
     resolution: {integrity: sha512-d+ZcVz9MWiFgdTyf2W+Jn2r5fXFddIQQp87eiQuzokyNwSmJb455EsZWl9USXkmKuwctp9yAHITCVGV/6rU0cw==}
     dependencies:
@@ -1043,7 +1052,6 @@ packages:
 
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-    dev: false
 
   /@iconify/utils@2.1.30:
     resolution: {integrity: sha512-bY0IO5xLOlbzJBnjWLxknp6Sss3yla03sVY9VeUz9nT6dbc+EGKlLfCt+6uytJnWm5CUvTF/BNotsLWF7kI61A==}

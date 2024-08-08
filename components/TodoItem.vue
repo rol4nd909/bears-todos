@@ -21,7 +21,11 @@
 
     <button class="transition hover:text-red-500" @click.stop="removeTodo">
       <span class="sr-only">Remove</span>
-      <Icon name="my-icons:bin" class="text-2xl" />
+      <Icon
+        name="solar:trash-bin-minimalistic-linear"
+        mode="svg"
+        class="text-2xl"
+      />
     </button>
   </Motion>
 </template>

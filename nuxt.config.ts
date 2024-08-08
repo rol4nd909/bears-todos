@@ -12,4 +12,9 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "",
   },
+  icon: {
+    clientBundle: {
+      icons: ["solar:trash-bin-minimalistic-linear"],
+    },
+  },
 });

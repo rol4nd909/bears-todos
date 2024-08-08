@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
   icon: {
+    provider: "server",
     customCollections: [
       {
         prefix: "my-icons",

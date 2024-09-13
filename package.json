@@ -14,7 +14,7 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.3",
     "@vueuse/motion": "^2.2.3",
-    "axios": "^1.7.3",
+    "axios": "^1.7.4",
     "nuxt": "^3.12.4",
     "vue": "latest"
   },

@@ -15,7 +15,7 @@
     "@pinia/nuxt": "^0.5.3",
     "@vueuse/motion": "^2.2.3",
     "axios": "^1.7.4",
-    "nuxt": "^3.12.4",
+    "nuxt": "^3.16.0",
     "vue": "latest"
   },
   "devDependencies": {

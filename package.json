@@ -10,13 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/icon": "^1.11.0",
-    "@nuxtjs/tailwindcss": "^6.13.2",
-    "@pinia/nuxt": "^0.10.1",
-    "@vueuse/motion": "^3.0.3",
-    "axios": "^1.8.4",
-    "nuxt": "^3.16.1",
-    "vue": "^3.5.13"
+    "@nuxt/icon": "^1.4.5",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@pinia/nuxt": "^0.5.3",
+    "@vueuse/motion": "^2.2.3",
+    "axios": "^1.7.3",
+    "nuxt": "^3.12.4",
+    "vue": "latest"
   },
   "devDependencies": {
     "@iconify-json/solar": "^1.2.2",

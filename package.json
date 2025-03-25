@@ -14,16 +14,16 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.3",
     "@vueuse/motion": "^2.2.3",
-    "axios": "^1.7.3",
-    "nuxt": "^3.12.4",
+    "axios": "^1.7.4",
+    "nuxt": "^3.16.0",
     "vue": "latest"
   },
   "devDependencies": {
-    "@iconify-json/solar": "^1.2.2",
-    "@nuxtjs/color-mode": "^3.5.2",
-    "fluid-tailwind": "^1.0.4",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11"
+    "@iconify-json/solar": "^1.1.10",
+    "@nuxtjs/color-mode": "^3.4.2",
+    "fluid-tailwind": "^1.0.3",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5"
   },
   "packageManager": "pnpm@8.15.5"
 }

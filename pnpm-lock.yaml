@@ -18,10 +18,10 @@ dependencies:
     specifier: ^2.2.3
     version: 2.2.6(vue@3.5.13)
   axios:
-    specifier: ^1.7.3
+    specifier: ^1.7.4
     version: 1.8.4
   nuxt:
-    specifier: ^3.12.4
+    specifier: ^3.16.0
     version: 3.16.1(typescript@5.8.2)(vite@6.2.3)
   vue:
     specifier: latest
@@ -29,19 +29,19 @@ dependencies:
 
 devDependencies:
   '@iconify-json/solar':
-    specifier: ^1.2.2
+    specifier: ^1.1.10
     version: 1.2.2
   '@nuxtjs/color-mode':
-    specifier: ^3.5.2
+    specifier: ^3.4.2
     version: 3.5.2
   fluid-tailwind:
-    specifier: ^1.0.4
+    specifier: ^1.0.3
     version: 1.0.4(tailwindcss@3.4.17)
   prettier:
-    specifier: ^3.5.3
+    specifier: ^3.3.3
     version: 3.5.3
   prettier-plugin-tailwindcss:
-    specifier: ^0.6.11
+    specifier: ^0.6.5
     version: 0.6.11(prettier@3.5.3)
 
 packages:
